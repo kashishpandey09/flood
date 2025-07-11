@@ -206,8 +206,9 @@ def send_welcome_email(to_email, city):
 def send_alert_email(to_email, city, alert_message):
     """Send flood alert email"""
     try:
-        sender_email = os.getenv("SENDER_EMAIL")
-        sender_password = os.getenv("SENDER_PASSWORD")
+        
+        sender_email = st.secrets["email"]
+        sender_password = st.secrets["gmailpass"]
         
         subject = f"🚨 Flood Alert for {city}"
         html_content = f"""
