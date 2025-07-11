@@ -164,8 +164,8 @@ def save_status(status, city_name, alert_type, language='en'):
 def send_welcome_email(to_email, city):
     """Send welcome email after registration"""
     try:
-        sender_email = os.getenv("SENDER_EMAIL")
-        sender_password = os.getenv("SENDER_PASSWORD")
+        sender_email = st.secrets["email"]
+        sender_password = st.secrets["gmailpass]
         
         if not sender_email or not sender_password:
             st.error("Email credentials not configured")
