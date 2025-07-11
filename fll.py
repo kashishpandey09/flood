@@ -165,7 +165,7 @@ def send_welcome_email(to_email, city):
     """Send welcome email after registration"""
     try:
         sender_email = st.secrets["email"]
-        sender_password = st.secrets["gmailpass]
+        sender_password = st.secrets["gmailpass"]
         
         if not sender_email or not sender_password:
             st.error("Email credentials not configured")
