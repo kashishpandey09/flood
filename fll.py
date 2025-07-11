@@ -9,14 +9,14 @@ import smtplib
 from deep_translator import GoogleTranslator
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import hashlib
 import re
 from streamlit import session_state as state
 import pandas as pd
 
 # Load environment variables
-load_dotenv()
+# load_dotenv()
 
 ADMIN_EMAIL=st.secrets["id"]
 ADMIN_PASSWORD=st.secrets["pass"]
