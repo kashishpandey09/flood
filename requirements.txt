@@ -4,5 +4,5 @@ requests
 twilio
 python-dotenv
 deep-translator
-scikit-learn==1.6.1
+scikit-learn
 email-validator
