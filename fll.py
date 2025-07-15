@@ -9,19 +9,14 @@ import smtplib
 from deep_translator import GoogleTranslator
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import hashlib
 import re
 from streamlit import session_state as state
 import pandas as pd
 
 # Load environment variables
-# load_dotenv()
-
-ADMIN_EMAIL=st.secrets["id"]
-ADMIN_PASSWORD=st.secrets["pass"]
-SENDER_EMAIL=st.secrets["email"]
-SENDER_PASSWORD=st.secrets["gmailpass"]
+load_dotenv()
 
 # Enhanced language dictionary with Indian languages
 language_dict = {
@@ -164,8 +159,8 @@ def save_status(status, city_name, alert_type, language='en'):
 def send_welcome_email(to_email, city):
     """Send welcome email after registration"""
     try:
-        sender_email = st.secrets["email"]
-        sender_password = st.secrets["gmailpass"]
+        sender_email = os.getenv("SENDER_EMAIL")
+        sender_password = os.getenv("SENDER_PASSWORD")
         
         if not sender_email or not sender_password:
             st.error("Email credentials not configured")
@@ -206,9 +201,8 @@ def send_welcome_email(to_email, city):
 def send_alert_email(to_email, city, alert_message):
     """Send flood alert email"""
     try:
-        
-        sender_email = st.secrets["email"]
-        sender_password = st.secrets["gmailpass"]
+        sender_email = os.getenv("SENDER_EMAIL")
+        sender_password = os.getenv("SENDER_PASSWORD")
         
         subject = f"🚨 Flood Alert for {city}"
         html_content = f"""
