@@ -1,8 +1,8 @@
 streamlit
-pandas
-requests
-twilio
 python-dotenv
+requests
 deep-translator
-scikit-learn==1.6.1
-email-validator
+pandas
+scikit-learn
+twilio
+pickle-mixin
