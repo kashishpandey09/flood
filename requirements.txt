@@ -1,8 +1,8 @@
+scikit-learn==1.6.1
 streamlit
-python-dotenv
-requests
 deep-translator
-pandas
-scikit-learn
+requests
 twilio
+python-dotenv
+geopy
 pickle-mixin
