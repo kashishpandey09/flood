@@ -6,3 +6,4 @@ python-dotenv
 deep-translator
 scikit-learn==1.6.1
 email-validator
+streamlit==1.29.0
